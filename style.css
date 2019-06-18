@@ -1,0 +1,389 @@
+html,body {
+    margin: 0 auto;
+    background-color: rgb(250, 248, 240);
+    font-family: Helvetica, sans-serif, Arial;
+    color: rgb(130, 120, 110);
+}
+
+body {
+    position: relative;
+    width: 515px;
+}
+
+header {
+    position: relative;
+    width: 515px;
+    height: 40px;
+    padding: 30px 0;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+#newgame,#offchain {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(140, 122, 104);
+    padding: 10px 15px;
+    border: none;
+    border-color: rgb(140, 122, 104);
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#newgame {
+    position: absolute;
+    right: 2px;
+}
+
+#offchain {
+    position: absolute;
+    right: 120px;
+}
+
+.box {
+    width: 515px;
+    height: 515px;
+    margin: 0;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(185, 173, 162);
+}
+
+.boxcell {
+    width: 110px;
+    height: 110px;
+    background-color: rgb(203, 193, 181);
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 110px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#gameBox {
+    position: absolute;
+    top: 100px;
+    width: 515px;
+    height: 515px;
+    margin: 0;
+    border: none;
+    border-radius: 6px;
+}
+
+#gameBox .cell {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 110px;
+    transition: top 100ms ease-in-out, left 100ms ease-in-out;
+}
+
+
+
+
+/* 关于游戏的设置 */
+
+.position-0{
+    top:15px;
+    left:15px
+}
+.position-1{
+    top:15px;
+    left:140px
+}
+.position-2{
+    top:15px;
+    left:265px
+}
+.position-3{
+    top:15px;
+    left:390px
+}
+.position-4{
+    top:140px;
+    left:15px
+}
+.position-5{
+    top:140px;
+    left:140px
+}
+.position-6{
+    top:140px;
+    left:265px
+}
+.position-7{
+    top:140px;
+    left:390px
+}
+.position-8{
+    top:265px;
+    left:15px
+}
+.position-9{
+    top:265px;
+    left:140px
+}
+.position-10{
+    top:265px;
+    left:265px
+}
+.position-11{
+    top:265px;
+    left:390px
+}
+.position-12{
+    top:390px;
+    left:15px
+}
+.position-13{
+    top:390px;
+    left:140px
+}
+.position-14{
+    top:390px;
+    left:265px
+}
+.position-15{
+    top:390px;
+    left:390px
+}
+
+.color-1{
+    background:#eee1c9;
+    box-shadow:0 0 30px 10px rgba(243,215,116,0),inset 0 0 0 1px rgba(255,255,255,0)
+}
+.color-2{
+    color:#f9f6f2;
+    background-color:#f3b27a
+}
+.color-3{
+    color:#f9f6f2;
+    background:#f69664
+}
+.color-4{
+    color:#f9f6f2;
+    background:#f77c5f
+}
+.color-5{
+    color:#f9f6f2;
+    background:#f75f3b
+}
+.color-6{
+    color:#f9f6f2;
+    background:#edd073;
+    box-shadow:0 0 30px 10px rgba(243,215,116,0.238095),inset 0 0 0 1px rgba(255,255,255,0.142857);
+    font-size:45px
+}
+.color-7{
+    color:#f9f6f2;
+    background:#edcc62;
+    box-shadow:0 0 30px 10px rgba(243,215,116,0.31746),inset 0 0 0 1px rgba(255,255,255,0.190476);
+    font-size:45px
+}
+.color-8{
+    color:#f9f6f2;
+    background:#edc950;
+    box-shadow:0 0 30px 10px rgba(243,215,116,0.396825),inset 0 0 0 1px rgba(255,255,255,0.238095);
+    font-size:45px
+}
+.color-9{
+    color:#f9f6f2;
+    background:#edc53f;
+    box-shadow:0 0 30px 10px rgba(243,215,116,0.47619),inset 0 0 0 1px rgba(255,255,255,0.285714);
+    font-size:35px
+}
+.color-10{
+    color:#f9f6f2;
+    background:#edc22e;
+    box-shadow:0 0 30px 10px rgba(243,215,116,0.555556),inset 0 0 0 1px rgba(255,255,255,0.333333);
+    font-size:35px
+}
+.color-11{
+    color: white;
+    background: red;
+    box-shadow:0 0 30px 10px rgba(243,215,116,0.555556),inset 0 0 0 1px rgba(255,255,255,0.333333);
+    font-size:35px
+}
+.color-super{
+    color:#f9f6f2;
+    background:#3c3a33;
+    font-size:30px
+}
+
+@keyframes appear{
+    0%{opacity:0;transform:scale(0)}
+    100%{opacity:1;transform:scale(1)}
+}
+
+.cell.new{
+    animation:appear 200ms ease 100ms;
+    animation-fill-mode:backwards
+}
+
+
+
+
+
+
+/* 游戏结束时的设置 */
+
+.gameOverDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 515px;
+    height: 515px;
+    margin: 0;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(185, 173, 162, 0.3);
+}
+
+.gameOverP {
+    color: rgb(120, 110, 100);
+    display: block;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.restartButton {
+    display: block;
+    font-size: 12px;
+    color: white;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
+    background-color: rgb(143, 122, 102);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/*
+
+
+
+.cell1 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.cell2 {
+    position: absolute;
+    top: 15px;
+    left: 140px;
+}
+
+.cell3 {
+    position: absolute;
+    top: 15px;
+    right: 140px;
+}
+
+.cell4 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.cell5 {
+    position: absolute;
+    top: 140px;
+    left: 15px;
+}
+
+.cell6 {
+    position: absolute;
+    top: 140px;
+    left: 140px;
+}
+
+.cell7 {
+    position: absolute;
+    top: 140px;
+    right: 140px;
+}
+
+.cell8 {
+    position: absolute;
+    top: 140px;
+    right: 15px;
+}
+
+.cell9 {
+    position: absolute;
+    bottom: 140px;
+    left: 15px;
+}
+
+.cell10 {
+    position: absolute;
+    bottom: 140px;
+    left: 140px;
+}
+
+.cell11 {
+    position: absolute;
+    bottom: 140px;
+    right: 140px;
+}
+
+.cell12 {
+    position: absolute;
+    bottom: 140px;
+    right: 15px;
+}
+
+.cell13 {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.cell14 {
+    position: absolute;
+    bottom: 15px;
+    left: 140px
+}
+
+.cell15 {
+    position: absolute;
+    bottom: 15px;
+    right: 140px;
+}
+
+.cell16 {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+footer {
+    font-size: 1.1rem;
+}*/
